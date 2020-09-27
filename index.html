@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <title>Brewery</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://kit.fontawesome.com/d7aace2616.js"></script>
+</head>
+
+<body>
+    <div id="loader">
+        <div id="mug">
+            <div id="beer"></div>
+            <div class="bubbles top-glass-bubble-1"></div>
+            <div class="bubbles top-glass-bubble-2"></div>
+            <div class="bubbles top-glass-bubble-3"></div>
+            <div class="bubbles top-glass-bubble-4"></div>
+        </div>
+    </div>
+
+    <div class="all">
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="#first"><img src="img/logo.png" alt="logo"></a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#first">Početna</a></li>
+                    <li><a href="#second">Karta piva</a></li>
+                    <li><a href="#third">Naš tim</a></li>
+                    <li><a href="#fourth">Kontakt</a></li>
+                </ul>
+                <div class="burger">
+                    <span><i class="fas fa-bars"></i></span>
+                </div>
+            </nav>
+        </header>
+
+        <section id="first">
+            <p>"PO PIVU SE <br> DAN POZNAJE!"</p>
+        </section>
+
+        <section id="second">
+            <div class="list">
+                <button class="button" id="jedan" value="0">1</button>
+                <button class="button" id="dva" value="1">2</button>
+                <button class="button" id="tri" value="2">3</button>
+                <button class="button" id="cetiri" value="3">4</button>
+                <button class="button" id="pet" value="4">5</button>
+                <button class="button" id="sest" value="5">6</button>
+            </div>
+            <div class="descrioption">
+                <div class="row">
+                    <div id="box1">1</div>
+                    <div id="box2">2</div>
+                </div>
+                <div class="row">
+                    <div id="box3">3</div>
+                    <div id="box4">4</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="third">
+            <div class="desc">
+                <h1>NAŠ TIM</h1>
+                <div class="sub-heading">
+                    <p>
+                        Specijaliste za sve vrste piva!!<br>
+                        IPA, Pale Ale, Jako crno pivo, Pilsner, Lager
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="employee" id="field1">
+                    <img src="img/person1.jpg" alt="">
+                    <h1>Aleksa Miletić</h1>
+                    <h4>Kreator svih receptura</h4>
+
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, rerum</br> possimus
+                        expedita
+                        distinctio tempore quo ducimus amet iure laudantium illum.</p>
+                </div>
+
+
+                <div class="employee" id="field2">
+                    <img src="img/person2.jpg" alt="">
+                    <h1>Dolf van den Brink</h1>
+                    <h4>Direktor</h4>
+
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, rerum</br> possimus
+                        expedita
+                        distinctio tempore quo ducimus amet iure laudantium illum.</p>
+                </div>
+
+
+                <div class="employee" id="field3">
+                    <img src="img/Person3.jpg" alt="">
+                    <h1>Dr. Jörg Lehmann</h1>
+                    <h4>Pekar (pravi piva)</h4>
+
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, rerum </br> possimus
+                        expedita
+                        distinctio tempore quo ducimus amet iure laudantium illum.</p>
+                </div>
+            </div>
+
+            <div class="circles">
+                <div onclick="reply_click(this.id)" class="circle active" id="person1"></div>
+                <div onclick="reply_click(this.id)" class="circle" id="person2"></div>
+                <div onclick="reply_click(this.id)" class="circle" id="person3"></div>
+            </div>
+        </section>
+
+
+        <section id="fourth">
+            <div>
+                <div class="row-form">
+                    <div>
+                        <p>Kontaktiraj nas</p>
+                        <form action="" method="POST" class="tm-contact-form">
+                            <div class="form-group">
+                                <input type="text" name="name" id="nameID" class="form-control" placeholder="Name"
+                                    required="">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" name="email" id="emailID" class="form-control" placeholder="Email"
+                                    required="">
+                            </div>
+
+                            <div class="form-group">
+                                <textarea rows="5" name="message" id="messageID" class="form-control"
+                                    placeholder="Message" required=""></textarea>
+                            </div>
+
+                            <div class="form-group tm-d-flex">
+                                <button type="submit" id="btn-subm" class="tm-btn tm-btn-success tm-btn-right">
+                                    Send
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tm-address-box">
+                        <h4 class="info-title">Naša adresa</h4>
+                        <div class="address">
+                            Bulevar Nikole Tesle br. 14
+                            <br>
+                            Beograd - Srbija
+                        </div>
+
+                        <i class="fas fa-phone contact-icon"></i>060-000111222
+                        <br>
+                        <i class="fas fa-envelope contact-icon"></i>beer.brewery@gmail.com
+
+                        <div class="contact-social">
+                            <a href="https://www.facebook.com/" class="social-link" target="_blank"><i
+                                    class="fab fa-facebook social-icon"></i></a>
+                            <a href="https://twitter.com/" class="social-link" target="_blank"><i
+                                    class="fab fa-twitter social-icon"></i></a>
+                            <a href="https://www.instagram.com/" class="social-link" target="_blank"><i
+                                    class="fab fa-instagram social-icon"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tm-container-inner-2 tm-map-section">
+                    <div class="row">
+                        <div class="tm-map">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2829.9591729120298!2d20.424763615407436!3d44.82239637909858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a65696e09b4fb%3A0xdb24efd31b567f49!2z0JHRg9C70LXQstCw0YAg0J3QuNC60L7Qu9C1INCi0LXRgdC70LUsINCR0LXQvtCz0YDQsNC0!5e0!3m2!1ssr!2srs!4v1574979802459!5m2!1ssr!2srs"
+                                width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                        </div>
+                    </div>
+                </div>
+
+        </section>
+
+        <footer>
+            <p>Copyright &copy; 2020 Brewery</p>
+        </footer>
+    </div>
+
+    <script>
+        setTimeout(function () {
+            $('#loader').fadeToggle();
+            $('.all').css('display', 'block');
+        }, 2500);
+    </script>
+
+    <script src='index_navbar.js'></script>
+    <script src='index_prva.js'></script>
+    <script src='index_druga.js'></script>
+    <script src='index_treca.js'></script>
+    <script src='index_forma.js'></script>
+</body>
+
+
+
+</html>

@@ -1,0 +1,670 @@
+.all{
+    display: none;
+}
+
+/* LOADING STRANICA  */
+#loader{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #3d1805;
+}
+
+#mug{
+    position: relative;
+    height: 200px;
+    width: 100px;
+    border: 8px solid #fff;
+    border-top: transparent;
+    border-radius:  0 0 20% 20% / 0 0 15% 15%;
+}
+
+#mug::before{
+    content: '';
+    height: 60%;
+    width: 20%;
+    border: 8px solid #fff;
+    position: absolute;
+    left: 100%;
+    top: 15%;
+    border-radius: 0 50% 50% 0/ 0 12% 12% 0;
+}
+
+#beer{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #ffd54f;
+    border-radius: 0 0 15% 15% / 0 0 10% 10%;
+    animation: fill-beer 1s linear forwards;
+}
+
+.bubbles{
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+}
+.top-glass-bubble-1{
+    height: 30px;
+    width: 30px;
+    left: -15%;
+    top: -10%;
+    opacity: 0;
+    animation: show-bubbles 0.5s linear 0.9s forwards;
+}
+.top-glass-bubble-2{
+    height: 45px;
+    width: 65px;
+    left: 0;
+    top: -18%;
+    opacity: 0;
+    animation: show-bubbles 0.5s linear 0.9s forwards;
+}
+.top-glass-bubble-3{
+    height: 55px;
+    width: 50px;
+    left: 43%;
+    top: -17%;
+    opacity: 0;
+    animation: show-bubbles 0.5s linear 0.9s forwards;
+}
+.top-glass-bubble-4{
+    height: 31px;
+    width: 35px;
+    left: 80%;
+    top: -10%;
+    opacity: 0;
+    animation: show-bubbles 0.5s linear 0.9s forwards;
+}
+
+@keyframes fill-beer{
+    0% {
+        height: 0;
+    }
+    100%{
+        height: 100%;
+    }
+}
+
+@keyframes show-bubbles{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 12vh;
+    background-color: gold;
+}
+
+.logo{
+    color: rgb(226, 226, 226);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.logo img{
+    max-height: 12vh;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.nav-links li{
+    list-style: none;
+}
+
+.nav-links a{
+    color: #3d1805;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.burger{
+    display: none;
+    cursor: pointer;
+}
+
+.burger span{
+    color: #3d1805;
+    font-size: 27px;
+}
+
+
+@media only screen and (max-width: 1024px){
+    .nav-links {
+        width: 60%;
+    }
+}
+
+
+@media only screen and (max-width: 768px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: gold;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .burger{
+        display: block;
+    }
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+
+
+section{
+    height: 100vh;
+}
+
+/* PRVA STRANICA */
+
+#first{
+    font-size: 100px;
+    color: white;
+    display: flex;
+}
+
+#first p{
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    #first{
+        font-size: 60px;
+    }
+}
+
+
+/* DRUGA STRANICA */
+
+
+.descrioption .row{
+    margin-top: 10px;
+    display: flex;
+    flex:1;
+    justify-content: space-around;
+}
+
+@media (max-width: 768px) {
+    #second, #fourth{
+        height: unset;
+    }
+    .descrioption .row{
+        margin-top: 10px;
+        display: block;
+        flex:1;
+        justify-content: space-around;
+    }
+    #box1, #box2, #box3, #box4{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+  }
+
+  /* PIVO index_druga.js */
+
+.beerImage img{
+    height: 200px;
+    width: 100px;
+    margin: 10px;
+    flex: 1;
+}
+.beer{
+    display: flex;
+    padding: 10px;
+}
+
+.beerText{
+    flex: 1;
+}
+
+
+.gallery-item {
+    max-width: 280px;
+}
+
+.img-fluid {
+    max-width: 100%; 
+    height: 200px;
+    width: 100px;
+}
+
+.gallery-img {
+    margin-bottom: 20px;
+}
+.gallery-title {
+    padding-left: 2rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #1A6692;
+    margin-bottom: 15px;
+}
+.gallery-description {
+    padding-left: 2rem;
+    margin-bottom: 20px;
+}
+.gallery-price {
+    padding-left: 2rem;
+    font-size: 1.25rem;
+    color: #2F956D;
+    margin-bottom: 60px;
+}
+ 
+.main{
+    display: flex;
+} 
+
+/* LISTA index.html */
+
+.list{
+    display: flex;
+    justify-content: center;
+    margin: 50px 10px;
+}
+
+.list button{
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+.list button:hover{
+    color:  #3d1805;
+    background-color: gold;
+}
+
+/* TREĆA STRANICA */
+
+#third{
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0,0,0,0.7)),url('https://www.discoverfranceandspain.com/wp-content/uploads/2019/09/Petrol-Brewing-Company-Fine-tuned-Parisian-beer-bottles.jpg') no-repeat center center fixed;
+}
+
+@media only screen and (min-width: 768px){
+    .desc h1{
+        padding: 100px 0 20px 0;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    
+    .desc h1{
+        padding: 20px 0;
+    }
+    
+}
+
+.desc{
+    text-align: center;
+}
+.desc h1{
+    text-transform: uppercase;
+    color: gold;
+    font-size: 50px;
+}
+
+.sub-heading{
+    margin-bottom: 75px;
+}
+
+.sub-heading p{
+    color:gold;
+    display: inline-block;
+    padding: 0 0 20px;
+    line-height: 24px;
+    font-size: 1.2rem;
+}
+
+#third .row{
+    display: flex;
+    text-align: center;
+}
+
+#third img{
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px gold;
+}
+
+.employee{
+    margin: 0 auto;
+    color: gold;
+}
+
+.employee h1, .employee h4{
+    margin: 10px 0;
+}
+
+.circles{
+    display: flex;
+    justify-content: center;
+}
+
+.circle{
+    box-shadow: 0 0 0 3px  #3d1805;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 30px;
+    transition: 1s ease;
+}
+
+.circle:hover{
+    background: #3d1805;
+}
+
+.active{
+    background: gold;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* FORMA */
+
+#fourth p{
+    font-size: 30px;
+    color: #3d1805;
+    margin-bottom: 20px;
+}
+
+.row-form{
+    display: flex;
+    justify-content: space-around;
+}
+.row-form p{
+    padding-top: 50px;
+}
+
+
+@media only screen and (max-width: 768px){
+    .row-form{
+        display: block;
+        margin: 0px 20px;
+    }
+}
+
+.tm-contact-form {
+    max-width: 100%;
+  }
+  
+@media (min-width: 768px) {
+    .tm-contact-form {
+        max-width: 310px;
+    } 
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+
+button[type=submit]{
+    height: 50px;
+    width: 100px;
+    font-size: 1.2rem;
+    color: #999;
+    background-color: transparent;
+    border: 1px solid #d0d0d0;
+    margin: 17px 17px 17px 0px;
+    cursor: pointer;
+    padding: 10px 20px 6px;
+    text-align: center;
+    outline: none;
+    transition: 0.4s;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #626364;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-right: 0;
+    border-top: 0;
+    border-left: 0;
+    border-radius: 0;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* ADRESA */
+
+.tm-address-box {
+    max-width: 100%;
+    text-align: center;
+}
+  
+@media (min-width: 768px) {
+    .tm-address-box {
+        text-align: center;
+        max-width: 315px;
+        margin: auto 0px;
+    } 
+    form{
+        width: 310px;
+    }
+}
+
+.info-title {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.contact-social{
+    margin: 20px 0;
+}
+
+.contact-icon {
+    display: inline-block;
+    margin-right: 25px;
+    color: #3d1805;
+}
+
+.address {
+    color: #3d1805;
+    line-height: 1.8;
+    margin-bottom: 50px;
+}
+
+  
+.social-link {
+    color: #3d1805;
+    display: inline-block;
+    border-radius: 1px;
+    background-color: transparent;
+    font-size: 1.3rem;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    margin-right: 0;
+    margin-bottom: 15px;
+}
+
+.social-link i{
+    display: flex;
+}
+
+.social-link:hover {
+    color: gold;
+    background-color: #3d1805;
+}
+
+.social-icon {
+align-items: center;
+justify-content: center;
+width: 100%;
+height: 100%;
+}
+
+
+
+
+.tm-d-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.tm-btn-right {
+    align-self: flex-end;
+}
+
+  
+.tm-btn-success:hover,
+.tm-btn-success:focus {
+    background-color: gold;
+    color: #3d1805;
+}
+
+button { 
+    transition: all 0.3s ease; 
+}
+
+/* IFRAME */
+
+.tm-container-inner,
+.tm-container-inner-2 {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+@media (min-width: 768px) {
+    .tm-container-inner,
+    .tm-container-inner-2 {
+        max-width: 840px;
+    }
+}
+
+@media (min-width: 992px) {
+    .tm-container-inner {
+        max-width: 1120px;
+    }
+
+    .tm-container-inner-2 {
+        max-width: 900px;
+    }
+}
+
+.tm-map-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+  
+.tm-map {
+    max-width: 900px;
+    height: 450px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tm-map iframe {
+    width: 100%;
+    height: 100%;
+}
+
+footer{
+    text-align: center;
+    background-color: gold;
+    padding: 10px;
+}
+
+@media only screen and (min-width: 768px){
+    footer{
+        margin-top: 320px;
+    }
+}
